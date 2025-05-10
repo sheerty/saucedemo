@@ -1,3 +1,4 @@
+import allure
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.common.by import By
@@ -6,6 +7,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support import expected_conditions as EC
 from base.base_class import Base
 from utilities.logger import Logger
+import allure
 
 
 class Client_information_page(Base):
@@ -68,13 +70,14 @@ class Client_information_page(Base):
     # Methods
 
     def client_information_input(self):
-        Logger.add_start_step(method='client_information_input')
-        self.get_current_url()
-        self.first_name_input('Alex')
-        self.last_name_input('Wanhatalo')
-        self.zip_code_input('1295234')
-        self.click_continue()
-        Logger.add_end_step(url=self.driver.current_url, method='client_information_input')
+        with allure.step('client_information_input'):
+            Logger.add_start_step(method='client_information_input')
+            self.get_current_url()
+            self.first_name_input('Alex')
+            self.last_name_input('Wanhatalo')
+            self.zip_code_input('1295234')
+            self.click_continue()
+            Logger.add_end_step(url=self.driver.current_url, method='client_information_input')
 
 
 

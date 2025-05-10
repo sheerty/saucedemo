@@ -1,3 +1,4 @@
+import allure
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.common.by import By
@@ -6,7 +7,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support import expected_conditions as EC
 from base.base_class import Base
 from utilities.logger import Logger
-
+import allure
 
 class Main_page(Base):
 
@@ -80,33 +81,37 @@ class Main_page(Base):
     # Methods
 
     def select_product_1(self):
-        Logger.add_start_step(method='select_product_1')
-        self.get_current_url()
-        self.click_select_product_1()
-        self.click_cart()
-        Logger.add_end_step(url=self.driver.current_url, method='select_product_1')
+        with allure.step('select product 1'):
+            Logger.add_start_step(method='select_product_1')
+            self.get_current_url()
+            self.click_select_product_1()
+            self.click_cart()
+            Logger.add_end_step(url=self.driver.current_url, method='select_product_1')
 
     def select_product_2(self):
-        Logger.add_start_step(method='select_product_2')
-        self.get_current_url()
-        self.click_select_product_2()
-        self.click_cart()
-        Logger.add_end_step(url=self.driver.current_url, method='select_product_2')
+        with allure.step('select product 2'):
+            Logger.add_start_step(method='select_product_2')
+            self.get_current_url()
+            self.click_select_product_2()
+            self.click_cart()
+            Logger.add_end_step(url=self.driver.current_url, method='select_product_2')
 
     def select_product_3(self):
-        Logger.add_start_step(method='select_product_3')
-        self.get_current_url()
-        self.click_select_product_3()
-        self.click_cart()
-        Logger.add_end_step(url=self.driver.current_url, method='select_product_3')
+        with allure.step('select product 3'):
+            Logger.add_start_step(method='select_product_3')
+            self.get_current_url()
+            self.click_select_product_3()
+            self.click_cart()
+            Logger.add_end_step(url=self.driver.current_url, method='select_product_3')
 
     def about_link(self):
-        Logger.add_start_step(method='about_link')
-        self.get_current_url()
-        self.click_burger()
-        self.click_about()
-        self.assert_url('https://saucelabs.com/')
-        Logger.add_end_step(url=self.driver.current_url, method='about_link')
+        with allure.step('about link'):
+            Logger.add_start_step(method='about_link')
+            self.get_current_url()
+            self.click_burger()
+            self.click_about()
+            self.assert_url('https://saucelabs.com/')
+            Logger.add_end_step(url=self.driver.current_url, method='about_link')
 
 
 

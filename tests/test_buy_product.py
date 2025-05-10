@@ -1,5 +1,6 @@
 import time
 
+import allure
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
@@ -15,7 +16,7 @@ from pages.login_page import Login_page
 from pages.main_page import Main_page
 from pages.paypemnt_page import Paypemnt_page
 
-
+@allure.description("Test buy product 1")
 @pytest.mark.run(order=1)
 def test_buy_product_1(set_up):
         options = webdriver.ChromeOptions()

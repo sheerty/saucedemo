@@ -1,0 +1,13 @@
+Start test
+Start test 3
+https://www.saucedemo.com/
+input user name successfully
+input password successfully
+click login successfully
+Good value word
+https://www.saucedemo.com/inventory.html
+click select product 3 successfully
+click cart successfully
+https://www.saucedemo.com/cart.html
+check out successfully
+End test

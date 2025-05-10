@@ -1,0 +1,9 @@
+Start test
+https://www.saucedemo.com/
+input user name successfully
+input password successfully
+click login successfully
+Good value word
+https://www.saucedemo.com/inventory.html
+click burger successfully
+click about successfully

@@ -6,7 +6,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support import expected_conditions as EC
-
+import allure
 from pages.cart_page import Cart_page
 from pages.client_information_page import Client_information_page
 from pages.finish_page import Finish_page

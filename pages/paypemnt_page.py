@@ -1,3 +1,4 @@
+import allure
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.common.by import By
@@ -41,10 +42,11 @@ class Paypemnt_page(Base):
     # Methods
 
     def finish_payemnt(self):
-        Logger.add_start_step(method='finish_payment')
-        self.get_current_url()
-        self.click_finish()
-        Logger.add_end_step(url=self.driver.current_url, method='finish_payment')
+        with allure.step('finish payemnt'):
+            Logger.add_start_step(method='finish_payment')
+            self.get_current_url()
+            self.click_finish()
+            Logger.add_end_step(url=self.driver.current_url, method='finish_payment')
 
 
 
