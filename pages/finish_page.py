@@ -5,6 +5,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support import expected_conditions as EC
 from base.base_class import Base
+from utilities.logger import Logger
 
 
 class Finish_page(Base):
@@ -20,9 +21,12 @@ class Finish_page(Base):
     # Methods
 
     def finish(self):
+        Logger.add_start_step(method='finish')
         self.get_current_url()
         self.assert_url('https://www.saucedemo.com/checkout-complete.html')
         self.get_screenshot()
+        Logger.add_end_step(url=self.driver.current_url, method='finish')
+
 
 
 

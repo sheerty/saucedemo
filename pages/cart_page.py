@@ -5,6 +5,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support import expected_conditions as EC
 from base.base_class import Base
+from utilities.logger import Logger
 
 
 class Cart_page(Base):
@@ -40,8 +41,12 @@ class Cart_page(Base):
     # Methods
 
     def checkout_confirmed(self):
+        Logger.add_start_step(method='checkout_confirmed')
         self.get_current_url()
         self.click_checkout()
+        Logger.add_end_step(url=self.driver.current_url, method='checkout_confirmed')
+
+
 
 
 

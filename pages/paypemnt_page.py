@@ -5,6 +5,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support import expected_conditions as EC
 from base.base_class import Base
+from utilities.logger import Logger
 
 
 class Paypemnt_page(Base):
@@ -40,8 +41,10 @@ class Paypemnt_page(Base):
     # Methods
 
     def finish_payemnt(self):
+        Logger.add_start_step(method='finish_payment')
         self.get_current_url()
         self.click_finish()
+        Logger.add_end_step(url=self.driver.current_url, method='finish_payment')
 
 
 
